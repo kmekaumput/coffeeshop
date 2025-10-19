@@ -429,36 +429,36 @@ template = """
 </html>
 """
 
-@app.route('/')
+
+@app.route("/")
 def home():
     return render_template_string(template)
 
-@app.route('/menu')
+
+@app.route("/menu")
 def menu():
-    return render_template_string(template.replace(
-        'Our Signature Blends',
-        'Full Menu - Coming Soon'
-    ))
+    return render_template_string(template.replace("Our Signature Blends", "Full Menu - Coming Soon"))
 
-@app.route('/about')
+
+@app.route("/about")
 def about():
-    return render_template_string(template.replace(
-        'Experience the Perfect Brew',
-        'About Our Coffee House'
-    ).replace(
-        'Handcrafted coffee from the finest beans, roasted to perfection in our artisan roastery.',
-        'Founded in 2020, we are passionate about bringing you the finest coffee experience.'
-    ))
+    return render_template_string(
+        template.replace("Experience the Perfect Brew", "About Our Coffee House").replace(
+            "Handcrafted coffee from the finest beans, roasted to perfection in our artisan roastery.",
+            "Founded in 2020, we are passionate about bringing you the finest coffee experience.",
+        )
+    )
 
-@app.route('/contact')
+
+@app.route("/contact")
 def contact():
-    return render_template_string(template.replace(
-        'Experience the Perfect Brew',
-        'Get In Touch'
-    ).replace(
-        'Handcrafted coffee from the finest beans, roasted to perfection in our artisan roastery.',
-        'Visit us at 123 Coffee Lane or email us at hello@darkroast.com'
-    ))
+    return render_template_string(
+        template.replace("Experience the Perfect Brew", "Get In Touch").replace(
+            "Handcrafted coffee from the finest beans, roasted to perfection in our artisan roastery.",
+            "Visit us at 123 Coffee Lane or email us at hello@darkroast.com",
+        )
+    )
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5100)
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5100)
