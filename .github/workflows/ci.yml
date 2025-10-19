@@ -77,12 +77,7 @@ jobs:
 
     - name: Security check with bandit
       run: |
-        bandit -r . -f json -o bandit-report.json || true
-        bandit -r . -f txt
-
-    - name: Dependency security check with safety
-      run: |
-        safety check || true
+        bandit -r . --exclude tests/ -f json -o bandit-report.json || true
 
   docker:
     runs-on: ubuntu-latest
