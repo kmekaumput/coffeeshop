@@ -149,7 +149,7 @@ jobs:
 
   deploy-to-azure:
     runs-on: ubuntu-latest
-    needs: build, setup-up-azure-resources
+    needs: setup-up-azure-resources
     name: Deploy app container to Azure
     steps:
       - name: "Login via Azure CLI"
@@ -180,7 +180,7 @@ jobs:
 
   test-deployed-application:
     runs-on: ubuntu-latest
-    needs: build, deploy-to-azure
+    needs: deploy-to-azure
     name: Build image and store in GitHub Container Registry
     steps:
       - name: Test Deployed Application
